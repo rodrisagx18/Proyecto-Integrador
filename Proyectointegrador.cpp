@@ -1,7 +1,11 @@
+//incluyo librerias necesarias
 #include <stdio.h>
 #include <locale.h>
-#include <stdlib.h>//incluyo librerias necesarias
+#include <stdlib.h>
 int main(){
+
+    //Definimos las variables que nesesitaremos mas adelante
+    float h, lad,volumen;
 	
 	char opcion;//declaro variables de entrada por el momento
 	setlocale(LC_ALL, "spanish");//defino el idioma del programa a español
@@ -24,13 +28,24 @@ int main(){
 	
 	    switch(opcion){
 		    case 'A':
-			    printf("L\n");
+			    printf("La formula al momento es A = x^2(p-2x) * h\n");
 		    break;
 		    case 'B':
-			    printf("M\n");
+                //Le pedimos al usuario los datos y los leemos
+			    printf("Ingrese la altura de su prisma:\n");
+                scanf("%f",&h);
+
+                printf("\nIngrese la longitud de un lado de su base:\n");
+                scanf("%f",&lad);
+
+                //Calculamos el volumen
+                volumen = (h*h)*(lad-(2*h));
+
+                //Le imprimimos el resultado
+                printf("El volumen de su primsa es: %0.2f", volumen);
 		    break;
 		    case 'C':
-			    printf("J\n");
+			    printf("Abir grafica de phyton\n");
 		    break;
 		    default:
 			printf("Esa nos es una opción valida dentro del menú");
