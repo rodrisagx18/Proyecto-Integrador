@@ -28,7 +28,7 @@ int main(){
 	
 	    switch(opcion){
 		    case 'A':
-			    printf("La formula al momento es A = x^2(p-2x) * h\n");
+			    printf("La formula al momento es V(x) = x^2(p-2x) * h\n");
 		    break;
 		    case 'B':
                 //Le pedimos al usuario los datos y los leemos
@@ -42,7 +42,7 @@ int main(){
                 volumen = (h*h)*(lad-(2*h));
 
                 //Le imprimimos el resultado
-                printf("El volumen de su primsa es: %0.2f", volumen);
+                printf("El volumen de su prisma es: %0.2f", volumen);
 		    break;
 		    case 'C':
 			    printf("Abir grafica de phyton\n");
