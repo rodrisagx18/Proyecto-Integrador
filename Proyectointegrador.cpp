@@ -45,10 +45,17 @@ int main(){
 	            //condicion para el volumen maximo de uno de sus lados
 
 		        if(x==P/3){
-			        printf("Volumen maximo\n");
+			        printf("\nVolumen maximo\n");
 		        }
                 //Le imprimimos el resultado
-                printf("El volumen de su prisma es: %0.2f", Vol);
+                printf("\nLa función que expresa el volumen del paquete es V(x) = Px^2 - 2x^3\n");
+                
+                if(Vol > 0){
+                    printf("\nEl volumen de su prisma es: %0.2f cm³", Vol);
+                } else {
+                	printf("El volumen de su prisma es: %.2f cm³", Vol);
+                    printf("\nPero el volumen calculado es negativo, lo cual no es físicamente posible. Por favor, revisa los valores ingresados.\n");
+                }
 		    break;
 		    case 'C':
 			    printf("Abir grafica de phyton\n");
