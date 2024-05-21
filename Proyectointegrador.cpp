@@ -5,9 +5,9 @@
 int main(){
 
     //Definimos las variables que nesesitaremos mas adelante
-    float h, lad,volumen;
+    float x,y,P,Vol;
 	
-	char opcion;//declaro variables de entrada por el momento
+	char opcion;//declaro variables de entrada
 	setlocale(LC_ALL, "spanish");//defino el idioma del programa a español
 	do{
 	   
@@ -28,21 +28,27 @@ int main(){
 	
 	    switch(opcion){
 		    case 'A':
-			    printf("La formula al momento es V(x) = x^2(p-2x) * h\n");
+			    printf("La función que expresa el volumen del paquete es V(x) = Px^2 - 2x^3\n");
 		    break;
 		    case 'B':
                 //Le pedimos al usuario los datos y los leemos
-			    printf("Ingrese la altura de su prisma:\n");
-                scanf("%f",&h);
+	            printf("Ingrese el valor de P:\n");
+                scanf("%f",&P);
+                //solicito x para el area de la base
+                printf("\nIngrese el valor de x:\n");
+                scanf("%f",&x);
 
-                printf("\nIngrese la longitud de un lado de su base:\n");
-                scanf("%f",&lad);
+                //Calculamos el valor de y
+                y= P-2*x;
+		        //calculamos el volumen
+                Vol=x*x*y;
+	            //condicion para el volumen maximo de uno de sus lados
 
-                //Calculamos el volumen
-                volumen = (h*h)*(lad-(2*h));
-
+		        if(x==P/3){
+			        printf("Volumen maximo\n");
+		        }
                 //Le imprimimos el resultado
-                printf("El volumen de su prisma es: %0.2f", volumen);
+                printf("El volumen de su prisma es: %0.2f", Vol);
 		    break;
 		    case 'C':
 			    printf("Abir grafica de phyton\n");
