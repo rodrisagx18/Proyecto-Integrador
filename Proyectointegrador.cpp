@@ -5,9 +5,8 @@
 int main(){
 
     //Definimos las variables que nesesitaremos mas adelante
-    float x,y,P,Vol;
+    float x,y,x2,x3,P,Vol;
 
-	char opcion1;
 	char opcion;//declaro variables de entrada
 	setlocale(LC_ALL, "spanish");//defino el idioma del programa a español
 	do{
@@ -40,27 +39,18 @@ int main(){
                 //solicito x para el area de la base
                 printf("\nIngrese el valor de y en cm:\n");
                 scanf("%f",&y);
+				
+				//Calculamos el valor de P
+				P = x*8 + y*4;
+				printf("\n\nP = %.2f\n\n", P);
 
-				//Le hacemos la pregunta al usuario sobre si save el valor de P
-				printf("\n¿Cuenta con el valor de P? s/n\n");
-				scanf(" %c", &opcion1);
-				//Comprovamos los daton ingresados
-				if (opcion1 != 'n' && opcion1 != 'N'){
-
-					//Le pedimos que ingrese el valor de P
-					printf("\nIngrese el valor de P:\n");
-					scanf("%f",&P);
-
-				}else{
-
-					//Calculamos el valor de P
-					P = x*4; //x+x+y;
-
-				}
-					
+				//
+				x2 = x*x;
+				x3 = x*x*x;
 
 				//Formula para el volumen
-				Vol = P*(x*x)-2*(x*x*x);
+				Vol = (x2 * P / 4.0) - (8.0 * x3 / 4.0);
+				//Vol = ((x * x * P) / 4) - ((8 * x * x * x) / 4);
 
 		        if(x==P/3){
 			        printf("\nVolumen maximo");
