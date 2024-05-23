@@ -6,7 +6,8 @@ int main(){
 
     //Definimos las variables que nesesitaremos mas adelante
     float x,y,P,Vol;
-	
+
+	char opcion1;
 	char opcion;//declaro variables de entrada
 	setlocale(LC_ALL, "spanish");//defino el idioma del programa a español
 	do{
@@ -25,27 +26,49 @@ int main(){
 	    scanf(" %c", &opcion);//menú de selección para las cuestiones propuestas en el problema
 	    
 	
-	
+		//Realizamos un SWITCH segun la opcion seleccionada
 	    switch(opcion){
+			case 'a':
 		    case 'A':
 			    printf("La función que expresa el volumen del paquete es V(x) = Px^2 - 2x^3\n");
 		    break;
+			case 'b':
 		    case 'B':
                 //Le pedimos al usuario los datos y los leemos
-	            printf("Ingrese el valor de P:\n");
-                scanf("%f",&P);
-                //solicito x para el area de la base
-                printf("\nIngrese el valor de x:\n");
+	            printf("Ingrese el valor de x:\n");
                 scanf("%f",&x);
+                //solicito x para el area de la base
+                printf("\nIngrese el valor de y:\n");
+                scanf("%f",&y);
 
+				//Le hacemos la pregunta al usuario sobre si save el valor de P
+				printf("\n¿Cuenta con el valor de P? s/n\n");
+				scanf(" %c", &opcion1);
+				//Comprovamos los daton ingresados
+				if (opcion1 != 'n' && opcion1 != 'N'){
+
+					//Le pedimos que ingrese el valor de P
+					printf("\nIngrese el valor de P:\n");
+					scanf("%f",&P);
+
+				}else{
+
+					//Calculamos el valor de P
+					P = x+x+y;//x*4;
+
+				}
+					
                 //Calculamos el valor de y
-                y= P-2*x;
+                //y= P-2*x;
 		        //calculamos el volumen
-                Vol=x*x*y;
+                //Vol=x*x*y;
 	            //condicion para el volumen maximo de uno de sus lados
 
+				//Formula para el volumen
+				Vol = P*(x*x)-2*(x*x*x);
+
 		        if(x==P/3){
-			        printf("\nVolumen maximo\n");
+			        printf("\nVolumen maximo");
 		        }
                 //Le imprimimos el resultado
                 printf("\nLa función que expresa el volumen del paquete es V(x) = Px^2 - 2x^3\n");
@@ -57,6 +80,7 @@ int main(){
                     printf("\nPero el volumen calculado es negativo, lo cual no es físicamente posible. Por favor, revisa los valores ingresados.\n");
                 }
 		    break;
+			case 'c':
 		    case 'C':
 			    printf("Abir grafica de phyton\n");
 		    break;
