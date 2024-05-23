@@ -35,10 +35,10 @@ int main(){
 			case 'b':
 		    case 'B':
                 //Le pedimos al usuario los datos y los leemos
-	            printf("Ingrese el valor de x:\n");
+	            printf("Ingrese el valor de x en cm:\n");
                 scanf("%f",&x);
                 //solicito x para el area de la base
-                printf("\nIngrese el valor de y:\n");
+                printf("\nIngrese el valor de y en cm:\n");
                 scanf("%f",&y);
 
 				//Le hacemos la pregunta al usuario sobre si save el valor de P
@@ -54,15 +54,10 @@ int main(){
 				}else{
 
 					//Calculamos el valor de P
-					P = x+x+y;//x*4;
+					P = x*4; //x+x+y;
 
 				}
 					
-                //Calculamos el valor de y
-                //y= P-2*x;
-		        //calculamos el volumen
-                //Vol=x*x*y;
-	            //condicion para el volumen maximo de uno de sus lados
 
 				//Formula para el volumen
 				Vol = P*(x*x)-2*(x*x*x);
