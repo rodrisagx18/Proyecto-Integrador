@@ -29,6 +29,7 @@ int main(){
 	    switch(opcion){
 			case 'a':
 		    case 'A':
+				//Le decimos al usaurio la formula a utilizar
 			    printf("La función que expresa el volumen del paquete es V(x) = Px^2 - 2x^3\n");
 		    break;
 			case 'b':
@@ -44,20 +45,22 @@ int main(){
 				P = x*8 + y*4;
 				printf("\n\nP = %.2f\n\n", P);
 
-				//
+				//Definimos y ajustamos los valores de x2 y x3
 				x2 = x*x;
 				x3 = x*x*x;
 
 				//Formula para el volumen
 				Vol = (x2 * P / 4.0) - (8.0 * x3 / 4.0);
-				//Vol = ((x * x * P) / 4) - ((8 * x * x * x) / 4);
 
-		        if(x==P/3){
+				//Si X es igual a el volumen maximo, se lo notificamos al usuario
+		        if(x == P/2 - 12*x){
 			        printf("\nVolumen maximo");
 		        }
+
                 //Le imprimimos el resultado
                 printf("\nLa función que expresa el volumen del paquete es V(x) = Px^2 - 2x^3\n");
                 
+				//Comprovamos el valor que tiene Vol es negativo o positivo
                 if(Vol > 0){
                     printf("\nEl volumen de su prisma es: %0.2f cm³", Vol);
                 } else {
@@ -67,17 +70,20 @@ int main(){
 		    break;
 			case 'c':
 		    case 'C':
+				//Abrimos grafica de python
 			    printf("Abir grafica de phyton\n");
 		    break;
 		    default:
+			//Si el usuario ingresa una opcion mal, se lo decimos, y a su vez le pedimos que ingrese una correcta
 			printf("Esa nos es una opción valida dentro del menú");
 	    }
 	    
-	    printf("\n\n¿Deseas salir del programa? (s/n): ");
+	    printf("\n\n¿Deseas salir del programa? (s/n): ");//Le decimos al usuario si ya quiere que el programa finalize
 	    scanf(" %c", &opcion);//preguntar al usuario si desea salir del programa	
 		system("cls");//despues de preguntar lo anterior ejecutado se limpiara la pantalla ya sea para salir o para darle inicio a la siguiente iteración del bucle
 	    
 	}while(opcion != 's' && opcion != 'S');//condición del ciclo para poder repetirse cuantas veces se desee
 	
+	//Finalizamos el programa
 	return 0;
 }
