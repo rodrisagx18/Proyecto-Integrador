@@ -30,7 +30,7 @@ int main(){
 			case 'a':
 		    case 'A':
 				//Le decimos al usaurio la formula a utilizar
-			    printf("La función que expresa el volumen del paquete es V(x) = Px^2 - 2x^3\n");
+			    printf("La función que expresa el volumen del paquete es V(x) = x^2P/4 - 8x^3/4\n");
 		    break;
 			case 'b':
 		    case 'B':
@@ -53,7 +53,7 @@ int main(){
 				Vol = (x2 * P / 4.0) - (8.0 * x3 / 4.0);
 
 				//Si X es igual a el volumen maximo, se lo notificamos al usuario
-		        if(x == P/2 - 12*x){
+		        if(x == P/12){
 			        printf("\nVolumen maximo");
 		        }
 
